@@ -52,11 +52,16 @@
             // TODO 2: calcula el subtotal de cada producto y acumula el total.
             // TODO 3: muestra únicamente los productos de los que se ha comprado alguna unidad.
             // TODO 4: muestra la fila TOTAL y calcula el IVA incluido en ese total.
-            $totalConIVA = $precioTotal * 0.21 + $precioTotal;
+            $totalConIVA = $precioTotal - ($precioTotal / 1.21);
             $totalConIVA = number_format($totalConIVA, 2);
              echo "<tr>";
                 echo "<td>TOTAL: </td>";
+                echo "<td>$precioTotal €</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<td>IVA incluido: </td>";
                 echo "<td>$totalConIVA €</td>";
+            echo "</tr>";
             ?>
         </tbody>
     </table>
