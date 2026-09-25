@@ -30,24 +30,33 @@
             // Cada cantidad corresponde al producto de la misma posición.
             $cantidadesCompradas = [2, 2, 1, 0, 0];
             $nombresProductos = array_keys($productos);
-            $precioTotal = [];
             $i = 0;
+            $sumaPrecioTotal = 0;
             // TODO 1: recorre los productos y enlaza cada precio con su cantidad.
             foreach ($productos as $producto => $precio) {
                 $nombreProducto = $nombresProductos[$i];
                 $cantidad = $cantidadesCompradas[$i];
-                $subTotal = $precio * $cantidad;
-                echo "<tr>";
-                echo "<td> $cantidadesCompradas[$i] </td>";
-                echo "<td> $nombreProducto</td>";
-                echo"<td>$precio</td>";
-                echo"<td>$subTotal</td>";
-                echo "</tr>";
-                $i++;
+                if ($cantidad > 0) {
+                    $subTotal = $precio * $cantidad;
+                    $sumaPrecioTotal += $subTotal;
+                    $precioTotal = number_format($sumaPrecioTotal, 2);
+                    echo "<tr>";
+                    echo "<td> $cantidadesCompradas[$i] </td>";
+                    echo "<td> $nombreProducto</td>";
+                    echo"<td>$precio €</td>";
+                    echo"<td>$subTotal €</td>";
+                    echo "</tr>";
+                    $i++;
+                }
             }
             // TODO 2: calcula el subtotal de cada producto y acumula el total.
             // TODO 3: muestra únicamente los productos de los que se ha comprado alguna unidad.
             // TODO 4: muestra la fila TOTAL y calcula el IVA incluido en ese total.
+            $totalConIVA = $precioTotal * 0.21 + $precioTotal;
+            $totalConIVA = number_format($totalConIVA, 2);
+             echo "<tr>";
+                echo "<td>TOTAL: </td>";
+                echo "<td>$totalConIVA €</td>";
             ?>
         </tbody>
     </table>
