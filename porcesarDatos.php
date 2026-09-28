@@ -1,6 +1,13 @@
 <?php
 // EJERCICIO 03. Los datos llegan desde radioCheckbox.html por POST.
 // TODO 1: comprueba el método de la petición y recoge los campos del formulario.
+    $nombre       = $_POST['nombre'] ?? '';
+$apellidos    = $_POST['apellidos'] ?? '';
+$edad         = $_POST['edad'] ?? '';
+$peso         = $_POST['peso'] ?? '';
+$genero       = $_POST['genero'] ?? '';
+$estadoCivil  = $_POST['estadoCivil'] ?? '';
+$aficiones    = $_POST['aficiones'] ?? [];
 // TODO 2: valida los datos obligatorios y que las opciones recibidas estén permitidas.
 // TODO 3: muestra nombre y apellidos en un <h1> y el resto de campos en párrafos.
 // TODO 4: recorre las aficiones y muéstralas en una lista <ul>.
