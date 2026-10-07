@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            transition: all 1s;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: wrap;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+            border: solid 10px white;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 2);
+            font-size: 5rem;
+            color: white;
+            font-weight: hold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 0 10px black;
+            overflow: hidden;
+        }
+        div::before {
+            content: "+";
+            position: relative;
+            top: 100%;
+        }
+        div{
+            background: url("https://picsum.photos/400") center center no-repeat;
+        }
+        #c1:hover{
+            background-position: 50% 0%;
+        }
+
+        div:hover::before{
+            position: relative;
+            top: 0%;
+        }
+
+        div::before:hover {
+            position: relative;
+            top: auto;
+            overflow:visible;
+        }
+
+    div:nth-child(2){
+        font-size: 1.5 rem;
+        p{
+            position: relative;
+            top: 100%;
+        }
+        &:hover p{
+            top: 0%;
+        }
+
+    }
+
+    div:nth-child(3):hover{
+        transform:rotate(180deg) scale(1.4) translate(50px);
+    }
+    div:nth-child(4):hover{
+        transform:rotate(180deg);
+    }
+
+    </style>
+</head>
+<body>
+    <div id="c1"></div>
+    <div id="c2"><p>AMEN JESUS</p></div>
+    <div id="c3"></div>
+    <div id="c4"></div>
+    <div id="c5"></div>
+    <div id="c6"></div>
+    <div id="c7"></div>
+    <div id="c8"></div>
+    <div id="c9"></div>
+</body>
+</html>

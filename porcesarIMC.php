@@ -21,20 +21,22 @@ if (
     $altura === false ||
     $altura < 50 ||
     $peso > 130 ||
-    $edad ===false
+    $edad === false
 ) {
     exit('Faltan datos o existe algún valor no válido en el formulario.');
 }
+$alturaMetros = pasarAMetros($altura);
 function pasarAMetros($altura): float {
-    return (float) $altura / 100;
+    $alturaMetros = $altura / 100;
+    return (float) $alturaMetros;
 }
 
-function calcularIMC($peso, $altura): float {
-    return (float) $peso / ($altura * $altura);
+function calcularIMC($peso, $alturaMetros): float {
+    return (float) ($alturaMetros * $alturaMetros) / $peso ;
 }
 
 function calcularPulsacionesMaximas($edad): int {
-    return 220 - (int) $edad;
+    return 220 - (int) (0.7*$edad);
 }
 
 function mostrar($valor): string {
@@ -51,8 +53,10 @@ echo '<body>';
 echo '<h1>'. mostrar($nombre) .'</h1>';
 echo '<p>Edad: ' . mostrar($edad) . '</p>';
 echo '<p>Peso: ' . mostrar($peso) . ' kg</p>';
-echo '<p>Altura: ' . mostrar(pasarAMetros($altura)) . '</p>';
-echo calcularIMC($peso, $altura);
+echo '<p>Altura: ' . mostrar($alturaMetros) . ' metros</p>';
+echo '<h2>IMC</h2>';
+echo mostrar(number_format(calcularIMC($peso,$altura),2));
+echo '<h2>CPM</h2>';
 echo calcularPulsacionesMaximas($edad);
 
 
