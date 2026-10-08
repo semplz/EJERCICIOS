@@ -1,45 +1,63 @@
 <?php
-require_once __DIR__ . '/componentes.php'; // Datos iniciales de opciones, precios y descuentos.
+require_once 'componentes.php';
 
-// EJERCICIO 06.
-// TODO 1: comprueba el método POST y valida las cinco opciones obligatorias.
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     http_response_code(405);
     exit('Envía el formulario mediante POST.');
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    exit('Emvia el formulario mediante POST.');
-    }
+$modelo = trim((string) ($_POST['Modelo'] ?? ''));
+$motor = trim((string) ($_POST['Motor'] ?? ''));
+$color = trim((string) ($_POST['Color'] ?? ''));
+$llantas = trim((string) ($_POST['Llantas'] ?? ''));
+$equipamiento = trim((string) ($_POST['Equipamiento'] ?? ''));
 
-    $modelo = trim((string) ($_POST['Modelo'] ?? ''));
-    $motor = trim((string) ($_POST['Motor'] ?? ''));
-    $color = trim((string) ($_POST['Color'] ?? ''));
-    $llantas = trim((string) ($_POST['Llantas'] ?? ''));
-    $equipamiento = trim((string) ($_POST['Equipamiento'] ?? ''));
-    $cantidad = filter_var($_POST['cantidad'] ?? 1, FILTER_VALIDATE_INT);
-    $accesorios = $_POST['Accesorios'] ?? [];
+if ($modelo === '' || $motor === '' || $color === '' || $llantas === '' || $equipamiento === '') {
+    exit('Debes completar todas las opciones obligatorias.');
+}
 
-    if ($modelo === '') {
-        exit('Debes indicar el modelo para completar el formulario');
-    }
-    if ($motor === '') {
-        exit('Debes indicar el motor para completar el formulario');
-    }
-    if ($color === '') {
-        exit('Debes indicar el color para completar el formulario');
-    }
-    if ($llantas === '') {
-        exit('Debes indicar el llantas para completar el formulario');
-    }
-    if ($equipamiento === '') {
-        exit('Debes indicar el equipamiento para completar el formulario');
-    }
-    // TODO 2: recoge los accesorios seleccionados (pueden ser cero) y la cantidad (1–5).
-// TODO 3: calcula el precio unitario SIN IVA a partir de los precios proporcionados.
-// TODO 4: multiplica por el número de vehículos y aplica el descuento, si es válido.
-// TODO 5: calcula un IVA del 21 % sobre la base una vez descontada la rebaja.
-// TODO 6: genera un resumen con opciones, importes, descuentos, IVA y total.
-// Si el código de descuento no existe, indica que es inválido y no apliques rebaja.
+$accesoriosSeleccionados = $_POST['Accesorios'] ?? [];
+if (!is_array($accesoriosSeleccionados)) {
+    $accesoriosSeleccionados = [];
+}
 
-echo 'Pendiente de implementar el ejercicio 06.';
+$cantidad = filter_var($_POST['cantidad'] ?? 1, FILTER_VALIDATE_INT);
+if ($cantidad === false || $cantidad < 1 || $cantidad > 5) {
+    $cantidad = 1;
+}
+
+$codigoDescuento = trim((string) ($_POST['codigo_descuento'] ?? ''));
+
+$precioUnitario = 0.0;
+$precioUnitario += $componentes['Modelo'][$modelo] ?? 0.0;
+$precioUnitario += $componentes['Motor'][$motor] ?? 0.0;
+$precioUnitario += $componentes['Color'][$color] ?? 0.0;
+$precioUnitario += $componentes['Llantas'][$llantas] ?? 0.0;
+$precioUnitario += $componentes['Equipamiento'][$equipamiento] ?? 0.0;
+
+foreach ($accesoriosSeleccionados as $acc) {
+    $precioUnitario += $componentes['Accesorios'][$acc] ?? 0.0;
+}
+
+$subtotalSinDescuento = $precioUnitario * $cantidad;
+
+$importeDescuento = 0.0;
+$mensajeDescuento = '';
+
+if ($codigoDescuento !== '') {
+    if (isset($codigosDescuento[$codigoDescuento])) {
+        $porcentaje = $codigosDescuento[$codigoDescuento];
+        $importeDescuento = $subtotalSinDescuento * ($porcentaje / 100);
+        $mensajeDescuento = "Código aplicado: $codigoDescuento ($porcentaje%)";
+    } else {
+        $mensajeDescuento = "El código de descuento '$codigoDescuento' es inválido.";
+    }
+}
+
+$baseImponible = $subtotalSinDescuento - $importeDescuento;
+if ($baseImponible < 0) {
+    $baseImponible = 0.0;
+}
+
+$iva = $baseImponible * 0.21;
+$totalPagar = $baseImponible + $iva;
