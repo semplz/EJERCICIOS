@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Concesionario</title></head>
+<body>
+    <h1>Configura tu coche</h1>
+    <form action="procesarConcesionario.php" method="POST">
+        <fieldset>
+            <legend>Modelo (obligatorio)</legend>
+            <label><input type="radio" name="Modelo" value="Compacto" required> Compacto</label>
+            <label><input type="radio" name="Modelo" value="Sedan" required> Sedán</label>
+            <label><input type="radio" name="Modelo" value="SUV" required> SUV</label>
+            <!-- TODO: añade Sedán y SUV con el mismo name. -->
+        </fieldset>
+        <fieldset>
+            <legend>Motor (obligatorio)</legend>
+            <label for=""><input type="radio" name="Motor" value="Gasolina" required> Gasolina 1.6L</label>
+            <label for=""><input type="radio" name="Motor" value="Diesel" required> Diesel 2.0L</label>
+            <label for=""><input type="radio" name="Motor" value="Electrico" required> Electrico 75 kWh</label>
+        </fieldset>
+        <fieldset>
+            <legend>Color (obligatorio)</legend>
+            <label for=""><input type="radio" name="Color" value="Blanco" required> Blanco</label>
+            <label for=""><input type="radio" name="Color" value="Negro" required> Negro</label>
+            <label for=""><input type="radio" name="Color" value="Azul_Metalico" required> Azul Metalico</label>
+            <label for=""><input type="radio" name="Color" value="Rojo" required> Rojo</label>
+        </fieldset>
+        <fieldset>
+            <legend>Llantas (obligatorio)</legend>
+            <label for=""><input type="radio" name="Llantas" value="16Aleacion" required>16 Aleacion</label>
+            <label for=""><input type="radio" name="Llantas" value="18Aleacion" required>18 Aleacion</label>
+            <label for=""><input type="radio" name="Llantas" value="20Deportivo" required>20 Deportivo</label>
+        </fieldset>
+        <fieldset>
+            <legend>Equipamiento (obligatorio)</legend>
+            <label for=""><input type="radio" name="Equipamiento" value="Basico" required>Basico</label>
+            <label for=""><input type="radio" name="Equipamiento" value="Confort" required>Confort</label>
+            <label for=""><input type="radio" name="Equipamiento" value="Premium" required>Premium</label>
+        </fieldset>
+        <fieldset>
+            <legend>Accesorios</legend>
+            <label for=""><input type="checkbox" name="Accesorios" value="TechoPanoramico" >Techo Panoramico</label><br>
+            <label for=""><input type="checkbox" name="Accesorios" value="AsientosDeCuero">Asientos De Cuero</label><br>
+            <label for=""><input type="checkbox" name="Accesorios" value="SistemaDeSonidoPremium">Sistema de Sonido Premium</label><br>
+            <label for=""><input type="checkbox" name="Accesorios" value="Camarade360">Camara de 360º</label><br>
+            <label for=""><input type="checkbox" name="Accesorios" value="PaqueteDeportivo">Paquete Deportivo</label><br>
+            <label for=""><input type="checkbox" name="Accesorios" value="ControlDeCruceroAdaptativo">Control de Crucero Adaptativo</label><br>
+            <label for=""><input type="checkbox" name="Accesorios" value="SensoresDeAparcamiento">Sensores de Aparcamiento</label><br>
+            <label for=""><input type="checkbox" name="Accesorios" value="MaleteroElectrico">Maletero Electrico</label><br>
+        </fieldset>
+        <!-- TODO: añade fieldsets con radios para Motor, Color, Llantas y Equipamiento. -->
+        <!-- TODO: añade un fieldset de checkboxes name="Accesorios[]" con los ocho accesorios. -->
+        <label>Cantidad (1–5): <input type="number" name="cantidad" min="1" max="5" value="1" required></label>
+        <!-- TODO: añade el campo opcional de texto name="codigo_descuento". -->
+         <br>
+         <label for="">Codigo de descuento(opcional): </label>
+         <input type="text" name="codigo_descuento">
+        <br><button type="submit">Calcular precio</button>
+    </form>
+</body>
+</html>

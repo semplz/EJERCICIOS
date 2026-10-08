@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $edad= filter_var($_POST['edad'] ?? null, FILTER_VALIDATE_INT);
     $peso = filter_var($_POST['peso'] ?? null, FILTER_VALIDATE_INT);
     $altura = filter_var($_POST['altura'] ?? null, FILTER_VALIDATE_INT);
+    
 }
 
 if (
