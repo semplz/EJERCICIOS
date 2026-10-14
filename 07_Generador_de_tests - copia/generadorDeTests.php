@@ -1,58 +1,64 @@
 <?php
 require_once __DIR__ . '/repositorioPreguntas.php';
+
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     http_response_code(405);
     exit('Envía el formulario mediante POST.');
 }
 
-$asignatura = trim((string) ($_POST['asignatura'] ?? ``));
-$numeroDePreguntas = filter_var($_POST['numeroDePreguntas'] ?? null, FILTER_VALIDATE_FLOAT);
+$asignatura = trim((string) ($_POST['asignatura'] ?? ''));
+$numeroDePreguntas = filter_var($_POST['numeroDePreguntas'] ?? 1, FILTER_VALIDATE_INT);
 
+if (!$asignatura || !isset($repositorioPreguntas[$asignatura])) {
+    exit('Asignatura no válida.');
+}
 
-
-// EJERCICIO 07 - PARTE A: GENERACIÓN.
-// TODO 1: exige POST y valida asignatura y numeroDePreguntas (entre 1 y 5).
-// TODO 2: elige al azar preguntas distintas del repositorioPreguntas de esa asignatura.
-function obtenerClavesAleatorias(string $asignatura, array $repositorioPreguntas, int $numeroDePreguntas = 1 )
+function generarFormularioExamen(string $asignatura, array $repositorioPreguntas, int $numeroDePreguntas)
 {
-    $claves = (array) array_rand($repositorioPreguntas[$asignatura], $numeroDePreguntas);
+    $claves = array_rand($repositorioPreguntas[$asignatura], $numeroDePreguntas);
+    
+    if (!is_array($claves)) {
+        $claves = [$claves];
+    }
+
     $numero = 0;
     foreach ($claves as $pregunta) {
+        // Campo oculto para enviar qué preguntas han salido
+        echo '<input type="hidden" name="preguntas[]" value="' . htmlspecialchars($pregunta, ENT_QUOTES, 'UTF-8') . '">';
+        
         $numero++;
-        echo $numero. ' - ';
+        echo '<p><strong>' . $numero . ' - ' . htmlspecialchars($pregunta, ENT_QUOTES, 'UTF-8') . '</strong></p>';
+        
         $valor = $repositorioPreguntas[$asignatura][$pregunta];
-    echo htmlspecialchars($pregunta, ENT_QUOTES, 'UTF-8');
-    echo '<br>';
-    foreach ($valor as $indice => $textoRespuesta){
-        echo '<div>';
-            echo '<input type="radio"  name="pregunta_' .'" value="' . htmlspecialchars($indice, ENT_QUOTES, 'UTF-8').'>';
-            echo '<label for="pregunta' . $numero . '_opt_' . $indice . '" class="label-checkbox">' . htmlspecialchars($textoRespuesta, ENT_QUOTES, 'UTF-8') . '</label>';
+        foreach ($valor as $indice => $textoRespuesta) {
+            $idInput = 'pregunta_' . $numero . '_opt_' . $indice;
+            echo '<div>';
+            echo '<input type="radio" id="' . $idInput . '" name="respuestas[' . htmlspecialchars($pregunta, ENT_QUOTES, 'UTF-8') . ']" value="' . htmlspecialchars($textoRespuesta, ENT_QUOTES, 'UTF-8') . '">';
+            echo '<label for="' . $idInput . '">' . htmlspecialchars($textoRespuesta, ENT_QUOTES, 'UTF-8') . '</label>';
             echo '</div>';
         }
         echo '<br>';
     }
-    }
-    // TODO 3: genera un formulario HTML POST dirigido a comprobarTest.php.
-    echo '<!doctype html>';
-echo '<html lang="es">';
-echo '<head>';
-echo '<meta charset="utf-8">';
-echo '<title>Datos personales</title>';
-echo '</head>';
-echo '<body>';
-echo '<form action="comprobarTest.php" method="POST">';
-echo '<h1>Mini examen</h1>';
-echo '<h2>'.$asignatura.'</h2>';
-echo '<p>' . obtenerClavesAleatorias($asignatura, $repositorioPreguntas, $numeroDePreguntas) . '</p>';
-echo '<br>';
-echo '<input type="submit">';
-echo '<input type="reset">';
-echo '</form>';
-echo '</body>';
-echo '</html>';
-
-// TODO 4: incluye identificadores de preguntas y opciones de respuesta
-//          (radios) para que el corrector pueda cotejar las respuestas.
-// TODO 5: incorpora información suficiente para conocer qué asignatura
-//          y qué preguntas se han mostrado, sin enviar al cliente las soluciones.
-
+}
+?>
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Mini Examen</title>
+</head>
+<body>
+    <form action="comprobarTest.php" method="POST">
+        <h1>Mini examen</h1>
+        <h2><?php echo htmlspecialchars($asignatura, ENT_QUOTES, 'UTF-8'); ?></h2>
+        
+        <input type="hidden" name="asignatura" value="<?php echo htmlspecialchars($asignatura, ENT_QUOTES, 'UTF-8'); ?>">
+        
+        <?php generarFormularioExamen($asignatura, $repositorioPreguntas, $numeroDePreguntas); ?>
+        
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Reiniciar">
+    </form>
+</body>
+</html>
