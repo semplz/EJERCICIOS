@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="guardarDatos.php" method="POST">
+        <fieldset>
+            <legend>Sexo*</legend>
+            <select name="sexo" id="sexo" required>
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Fecha de Nacimiento</legend>
+            <input type="date" name="FechaDeNacimiento">
+        </fieldset>
+        <fieldset>
+            <legend>Email*</legend>
+            <input type="email" name="email" required>
+        </fieldset>
+        <fieldset>
+            <legend>¿Me quieres?</legend>
+            <input type="radio" id="si" name="pregunta_amor">
+            <label for="si">SI</label>
+            <input type="radio" id="no" name="pregunta_amor">
+            <label for="no">NO</label>
+        </fieldset>
+        <label for="condiciones">¿Aceptas las condiciones?</label>
+        <input type="checkbox" id="condiciones" required><br>
+        <label for="texto">¿Alguna preguna?</label>
+        <textarea name="texto" id="texto" placeholder="Escribe aqui..."></textarea>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+</body>
+</html>
