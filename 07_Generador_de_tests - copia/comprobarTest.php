@@ -1,12 +1,53 @@
 <?php
 require_once __DIR__ . '/repositorioPreguntas.php';
 
-// EJERCICIO 07 - PARTE B: CORRECCIÓN.
-// TODO 1: exige POST y recupera asignatura, preguntas y respuestas.
-// TODO 2: comprueba que las preguntas enviadas pertenecen a la asignatura,
-//          no están repetidas y que cada respuesta pertenece a sus opciones.
-// TODO 3: consulta el mapa de soluciones que has completado en el repositorio.
-// TODO 4: cuenta aciertos y fallos (incluidas las preguntas en blanco).
-// TODO 5: calcula una nota entre 0 y 10 y muestra el resultado en HTML.
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+    exit('Envía el formulario mediante POST.');
+}
 
-echo 'Pendiente de implementar la corrección del ejercicio 07.';
+$asignatura = $_POST['asignatura'] ?? '';
+$respuestasUsuario = $_POST['respuestas'] ?? [];
+$totalPreguntasEnviadas = intval($_POST['totalPreguntas'] ?? 0);
+
+if (!isset($repositorioRespuestas[$asignatura])) {
+    exit('Asignatura no válida.');
+}
+
+$aciertos = 0;
+$fallos = 0;
+$blancos = 0;
+
+$soluciones = $repositorioRespuestas[$asignatura];
+
+foreach ($respuestasUsuario as $pregunta => $respuestaUsuario) {
+    if (isset($soluciones[$pregunta])) {
+        if ($respuestaUsuario === '') {
+            $blancos++;
+        } elseif ($respuestaUsuario === $soluciones[$pregunta]) {
+            $aciertos++;
+        } else {
+            $fallos++;
+        }
+    }
+}
+
+$total = $totalPreguntasEnviadas > 0 ? $totalPreguntasEnviadas : count($soluciones);
+$nota = $total > 0 ? ($aciertos / $total) * 10 : 0;
+?>
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Resultado</title>
+</head>
+<body>
+    <h1>Resultado del test</h1>
+    <p>Asignatura: <?php echo htmlspecialchars($asignatura, ENT_QUOTES, 'UTF-8'); ?></p>
+    <p>Aciertos: <?php echo $aciertos; ?></p>
+    <p>Fallos: <?php echo $fallos; ?></p>
+    <p>En blanco: <?php echo $blancos; ?></p>
+    <p><strong>Nota: <?php echo number_format($nota, 2); ?> / 10</strong></p>
+
+    <a href="index.php">Volver</a>
+</body>
+</html>
