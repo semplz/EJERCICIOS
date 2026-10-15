@@ -48,6 +48,6 @@ $nota = $total > 0 ? ($aciertos / $total) * 10 : 0;
     <p>En blanco: <?php echo $blancos; ?></p>
     <p><strong>Nota: <?php echo number_format($nota, 2); ?> / 10</strong></p>
 
-    <a href="index.php">Volver</a>
+    <a href="generadorDeTests.html">Volver</a>
 </body>
 </html>
