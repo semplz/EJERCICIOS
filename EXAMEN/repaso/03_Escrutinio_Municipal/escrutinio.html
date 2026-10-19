@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escrutinio simulado</title>
+</head>
+
+<body>
+    <h1>Escrutinio municipal ficticio</h1>
+    <p>Introduce un recuento inventado. No son resultados oficiales.</p>
+    <form method="post" action="procesarEscrutinio.php">
+        <label>Censo: <input type="number" name="censo" min="1" max="100000" required></label>
+        <!-- TODO: campos PP, Vox, Sumar y Podemos con name="votos[PARTIDO]" -->
+        <fieldset>
+            <legend>Introducir votos por partido</legend>
+            <label>PSOE:
+                <input type="number" name="votos[PSOE]" min="0" value="0" required>
+            </label><br>
+            <label>PP:
+                <input type="number" name="votos[PP]" min="0" value="0" required>
+            </label><br>
+
+            <label>Vox:
+                <input type="number" name="votos[Vox]" min="0" value="0" required>
+            </label><br>
+
+            <label>Sumar:
+                <input type="number" name="votos[Sumar]" min="0" value="0" required>
+            </label><br>
+
+            <label>Podemos:
+                <input type="number" name="votos[Podemos]" min="0" value="0" required>
+            </label>
+        </fieldset>
+        <!-- TODO: campos name="blancos" y name="nulos", enteros >= 0 -->
+        <label>Votos en blanco:
+            <input type="number" name="blancos" min="0" value="0" required>
+        </label><br>
+        <label>Votos nulos:
+            <input type="number" name="nulos" min="0" value="0" required>
+        </label><br>
+        <button type="submit">Calcular escrutinio</button>
+    </form>
+</body>
+
+</html>

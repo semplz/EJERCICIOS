@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><title>Pedido electoral</title></head>
+<body>
+<h1>Pedido de material de campaña (simulación)</h1>
+<form method="post" action="procesarPedido.php">
+    <label for="partido">Partido:</label>
+    <select id="partido" name="partido" required>
+        <option value="PSOE">PSOE</option><option value="PP">PP</option>
+        <option value="Vox">Vox</option><option value="Sumar">Sumar</option>
+        <option value="Podemos">Podemos</option>
+        
+    </select>
+    <br>
+    <!-- TODO: radios obligatorios name="pack": basico, movil, completo -->
+    <label>Pack:</label> 
+    <input type="radio" name="pack" value="basico" required> Básico
+    <input type="radio" name="pack" value="movil"> Móvil
+    <input type="radio" name="pack" value="completo"> Completo
+    <br>
+    <!-- TODO: número entero name="unidades", mínimo 1 y máximo 8 -->
+    <label for="unidades">Unidades:</label>
+    <input type="number" id="unidades" name="unidades" min="1" max="8" required>
+    <br>
+    <!-- TODO: checkboxes name="extras[]": chapas, pegatinas, lanyards, folletos -->
+    <label>Extras:</label>
+    <input type="checkbox" name="extras[]" value="chapas"> Chapas
+    <input type="checkbox" name="extras[]" value="pegatinas"> Pegatinas
+    <input type="checkbox" name="extras[]" value="lanyards"> Lanyards
+    <input type="checkbox" name="extras[]" value="folletos"> Folletos
+    <br>
+    <!-- TODO: radios obligatorios name="transporte": recogida, normal, urgente -->
+    <label>Transporte:</label>
+    <input type="radio" name="transporte" value="recogida" required> Recogida
+    <input type="radio" name="transporte" value="normal"> Normal
+    <input type="radio" name="transporte" value="urgente"> Urgente
+    <br>   
+    <!-- TODO: campo de texto opcional name="codigo" (LOCAL2026 o VOLUNTARIADO) -->
+    <label for="codigo">Código promocional:</label>
+    <input type="text" id="codigo" name="codigo" placeholder="LOCAL2026 o VOLUNTARIADO">
+    <br>
+    <button type="submit">Calcular pedido</button>
+</form>
+</body></html>
