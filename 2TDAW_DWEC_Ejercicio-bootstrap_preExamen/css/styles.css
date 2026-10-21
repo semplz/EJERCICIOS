@@ -114,22 +114,13 @@ div#fotograma, div#diseño-web, div#creatividad, div#seo, div#css, div#digital {
         height: auto;
         flex-shrink: 0;
     }
-
     h4 {
         color: var(--negro);
         text-transform: uppercase;
-        font-size: 0.9rem;
-        font-weight: bold;
-        margin: 0 0 5px 0;
-        text-align: left;
     }
 
     p {
-        color: rgb(96, 96, 96);
-        text-align: left;
-        font-size: 0.85rem;
-        line-height: 1.4;
-        margin: 0;
+        color: grey;
     }
 }
 
