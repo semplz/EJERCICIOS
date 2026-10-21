@@ -1,5 +1,5 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
     --negro: black;
     --blanco: white;
@@ -15,7 +15,8 @@
     box-sizing: border-box;
     transition: all .5s;
 }
-h1,h2,h3{
+
+h1, h2, h3 {
     font-family: "Roboto Slab", serif;
 }
 
@@ -58,14 +59,14 @@ header#header {
             padding: 0 10px;
             margin: 0 5px;
 
-            &#botonLogin{
+            &#botonLogin {
                 background-color: #329e9c;
                 padding: 15px 40px;
                 border-radius: 20px;
                 color: var(--blanco);
             }
 
-            &#botonLogin:hover{
+            &#botonLogin:hover {
                 color: var(--negro);
                 background-color: cornflowerblue;
             }
@@ -108,6 +109,8 @@ section#banner {
     }
 
     a {
+        border: 2px solid var(--blanco);
+        border-radius: 50px;
         color: var(--blanco);
         background-color: transparent;
         padding: 20px 50px;
@@ -120,71 +123,143 @@ section#banner {
     }
 }
 
+
+
+
+
 section#servicios {
-    padding: 50px 0;
-    border-bottom: solid 1px var(--grisClaro);
-
-    div.arriba {
-        max-width: 60%;
+    padding: 80px 100px;
+    background-color: #2f9ea7;
+    margin-bottom: 70px;
+    h1 {
+        color: #ffffff;
         text-align: center;
-        margin: auto;
-        p {
-            margin: 20px 0;
-        }
+        font-size: 2rem;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
     }
-
-    div.abajo{
+    div.abajo {
         display: flex;
         justify-content: center;
-        gap: 20px;
-        @media screen and (max-width:960px){
+        gap: 40px;
+
+        @media screen and (max-width: 768px) {
             flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
-        article{
-            width: 20%;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            align-content: start;
-            align-items: end;
-            img{
-                max-width: 50%;
-            }
+    }
+    article {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;    
+        text-align: center;     
+        img {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            padding: 25px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        h3 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin: 0 0 4px 0;
+            padding: 0;
+        }
+        p {
+            color: #ffffff;
+            font-size: 0.85rem;
+            margin: 0;
+            opacity: 0.9;
+            padding-bottom: 100px;
         }
     }
 }
 
-section#galeria {
-    min-height:80vh ;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    gap: 20px;
-    h2{
-        width: 100%;
-        margin: 50px 0;
-    }
-    img {
-        margin-bottom: 20px 0;
-    }
-    p+p{
-        font-size: 10px;
-    } 
-}
-
-footer#footer{
+footer#footer {
     background-color: var(--negro);
     width: 100px 0;
     padding: 100px 0;
     text-align: center;
-    a{
+
+    a {
         color: var(--blanco);
         margin: 0 20px;
         font-size: 1.5rem;
-        &:hover{
+
+        &:hover {
             color: var(--morado);
         }
     }
 }
+
+section#Informacion {
+    border: 1px solid var(--blanco);
+    border-radius: 40px;
+    font-family: "Roboto Slab", serif;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 100%;
+        width: auto;
+        align-items: center;
+    }
+
+    h2 {
+        color: var(--negro);
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        margin: 0 0 10px 40px;
+    }
+
+    p {
+        max-width: 350px;
+        margin: 0 0 15px 20px;
+    }
+
+    a#botonCaca {
+        background-color: #329e9c;
+        padding: 8px 18px;
+        border-radius: 20px;
+        color: var(--blanco);
+        text-decoration: none;
+        margin: auto;
+    }
+}
+section#ideas {
+    margin: auto;
+    max-width: 50rem;
+    align-items: center;
+    text-align: center;
+    padding-top: 3rem;
+    padding: 5rem 5rem;
+}
+
+footer#footer{
+    background-color: #42474b;
+    display: flex;
+    justify-content: space-around;
+    p{
+        color: var(--blanco);
+    }
+    img{
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        border: 1px solid var(--blanco);
+        padding: 20px;
+        border-radius: 50%;
+    }
+}
+
