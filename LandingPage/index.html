@@ -1,338 +1,563 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Sunnyside agency landing page</title>
+    <title>Frontend Mentor | Sunnyside</title>
 
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Fraunces:wght@700;900&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 6 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Sunnyside agency landing page</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <style>  
-    body{
-      margin: 0%;
-      padding: 0%;
-    }
-    header#header{
-      background-color: #3dbeff;
-      display: flex;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      nav#navegador{
-        margin-left: auto;
-        a{
-          margin-right: 20px;
-          text-decoration: none;
-          text-transform: uppercase;
-          color: aliceblue;
-          &#botonEspecial{
-            background-color: aliceblue;
-            border-radius: 20px;
-            color: black;
-            padding: 10px 20px;
-          }
-        }
-      }
-    }
-    section#arriba{
-      background-image: url(images/desktop/image-header.jpg);
-      padding-bottom: 200px;
-      background-repeat: no-repeat;  
-      background-position: center;   
-      background-size: cover;
-      text-align: center;
-      h1{
-        text-transform: uppercase;
-        color: #fffbf8;
-      }
-    }
-
-    section#transform {
-      display: flex;
-      width: 100%;
-      background-color: #fffbf8;
-
-      div#textoTransform {
-        width: 50%;
-        padding: 80px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-        h2 {
-          font-family: 'Fraunces', serif;
-          font-weight: 900;
-          font-size: 2.5rem;
-          color: #24303e;
-          margin-bottom: 20px;
+    <style>
+        * {
+            box-sizing: border-box;
         }
 
-        p {
-          max-width: 400px;
-          color: #818498;
-          margin-bottom: 30px;
-          line-height: 1.6;
-        }
-      }
-
-      div#fotoHuevo {
-        width: 50%;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-      }
-    }
-
-    .enlacesSubrayados {
-      text-decoration: none;
-      font-family: 'Fraunces', serif;
-      font-weight: 900;
-      color: #24303e;
-      text-transform: uppercase;
-    }
-
-    section#Stand {
-      display: flex;
-      width: 100%;
-      background-color: #fffbf8;
-
-      div#fotoStand {
-        width: 50%;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-      }
-
-      div#textoStand {
-        width: 50%;
-        padding: 80px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        h2 {
-          font-family: 'Fraunces', serif;
-          font-weight: 900;
-          font-size: 2.5rem;
-          color: #24303e;
-          margin-bottom: 20px;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Barlow', sans-serif;
+            color: #818498;
+            overflow-x: hidden;
         }
 
-        p {
-          max-width: 400px;
-          color: #818498;
-          margin-bottom: 30px;
-          line-height: 1.6;
+        /* CABECERA & NAVEGACIÓN (Fondo transparente para que se vea el azul) */
+        header#header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 35px 24px;
+            background-color: transparent;
         }
-      }
-    }
-    section#graphicPhotography{
-      display: flex;
-      h3{
-        font-family: 'Fraunces', serif;
-          font-weight: 900;
-          font-size: 2.5rem;
-          color: #24303e;
-          margin-bottom: 20px;
-      }
-      p{
-        width: 50%;
-        padding: 80px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      div#graphic{
-        flex-direction: column;
-        background-image: url(images/desktop/image-graphic-design.jpg);
-        width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-      }
-      div#photography{
-        flex-direction: column;
-        background-image: url(images/desktop/image-photography.jpg);
-        width: 100%;
-        height: 100%;
-        background: no-repeat;
-        object-fit: cover;
-        display: block;
-      }
-    }
-  </style>
- 
+
+        .navbar {
+            background-color: transparent !important;
+        }
+
+        .navbar-brand img {
+            height: 24px;
+            display: block;
+        }
+
+        #navegador a.nav-link {
+            color: white !important;
+            font-size: 1.1rem;
+            margin-left: 35px;
+        }
+
+        #navegador #botonEspecial {
+            background-color: white;
+            color: #24303e !important;
+            border-radius: 30px;
+            padding: 14px 30px;
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        /* PORTADA (HERO) */
+        section#arriba {
+            background-image: url("images/desktop/image-header.jpg");
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 160px;
+            background-color: #3ebfff;
+        }
+
+        #arriba h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 3.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 90px;
+        }
+
+        /* TRANSFORM & STAND OUT */
+        #textoTransform,
+        #textoStand {
+            padding: 100px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #fffbf8;
+        }
+
+        #textoTransform h2,
+        #textoStand h2 {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            color: #24303e;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        #textoTransform p,
+        #textoStand p {
+            line-height: 1.6;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
+
+        .enlacesSubrayados {
+            text-decoration: none;
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            color: #24303e;
+            text-transform: uppercase;
+            width: fit-content;
+            border-bottom: 6px solid #fad40070;
+            border-radius: 3px;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+
+        #textoStand .enlacesSubrayados {
+            border-bottom-color: #fe786670;
+        }
+
+        #fotoHuevo img,
+        #fotoStand img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* GRAPHIC DESIGN & PHOTOGRAPHY */
+        #graphic,
+        #photography {
+            min-height: 600px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            padding: 60px 22%;
+        }
+
+        #graphic {
+            background-image: url("images/desktop/image-graphic-design.jpg");
+            color: #25564b;
+        }
+
+        #photography {
+            background-image: url("images/desktop/image-photography.jpg");
+            color: #19536b;
+        }
+
+        section#graphicPhotography h3 {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        /* TESTIMONIOS */
+        section#client {
+            background-color: #fffbf8;
+            padding: 140px 8%;
+            text-align: center;
+        }
+
+        #client h3 {
+            font-family: 'Fraunces', serif;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: #a7abae;
+            font-size: 1.2rem;
+            margin-bottom: 80px;
+            font-weight: 900;
+        }
+
+        .client {
+            padding: 0 15px;
+        }
+
+        .client img {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 50px;
+        }
+
+        .client p {
+            color: #5a636c;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .client .nombre {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            color: #24303e;
+            margin-top: 50px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .client .estudios {
+            font-size: 0.85rem;
+            color: #a7abae;
+        }
+
+        /* GALERÍA & FOOTER */
+        section#galeriaFotos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        footer#footer {
+            background-color: #90d4c5;
+            text-align: center;
+            padding: 70px 20px;
+            color: #25564b;
+        }
+
+        #footer h4 {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            margin-bottom: 35px;
+        }
+
+        #enlaceFooter {
+            margin-bottom: 70px;
+        }
+
+        #enlaceFooter a {
+            color: #458c7e;
+            text-decoration: none;
+            margin: 0 25px;
+            font-weight: 600;
+        }
+
+        #imagenesSociales img {
+            margin: 0 12px;
+            cursor: pointer;
+        }
+
+        /* ==================================================
+           ADAPTACIÓN RESPONSIVE
+        ================================================== */
+        @media (max-width: 767.98px) {
+            header#header {
+                padding: 24px;
+            }
+
+            /* Menú desplegable flotante */
+            .navbar-collapse {
+                background-color: white;
+                position: absolute;
+                top: 75px;
+                left: 24px;
+                right: 24px;
+                padding: 40px 20px;
+                box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            }
+
+            .navbar-collapse::before {
+                content: "";
+                position: absolute;
+                top: -24px;
+                right: 0;
+                border-width: 0 0 24px 24px;
+                border-style: solid;
+                border-color: transparent transparent white transparent;
+            }
+
+            #navegador .navbar-nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            #navegador a.nav-link {
+                color: #818498 !important;
+                margin: 15px 0 !important;
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+
+            #navegador #botonEspecial {
+                background-color: #fad400 !important;
+                color: #24303e !important;
+                margin-top: 20px !important;
+                padding: 16px 35px !important;
+                border-radius: 35px;
+                font-size: 1rem;
+                width: auto;
+            }
+
+            section#arriba {
+                background-image: url("images/mobile/image-header.jpg");
+                padding-top: 150px;
+                min-height: 540px;
+            }
+
+            #arriba h1 {
+                font-size: 2.3rem;
+                letter-spacing: 6px;
+                margin-bottom: 50px;
+            }
+
+            #textoTransform,
+            #textoStand {
+                padding: 60px 30px;
+                text-align: center;
+                align-items: center;
+            }
+
+            #textoTransform h2,
+            #textoStand h2 {
+                font-size: 2rem;
+            }
+
+            #fotoHuevo img {
+                content: url("images/mobile/image-transform.jpg");
+            }
+
+            #fotoStand img {
+                content: url("images/mobile/image-stand-out.jpg");
+            }
+
+            #graphic {
+                background-image: url("images/mobile/image-graphic-design.jpg");
+                min-height: 600px;
+                padding: 50px 25px;
+            }
+
+            #photography {
+                background-image: url("images/mobile/image-photography.jpg");
+                min-height: 600px;
+                padding: 50px 25px;
+            }
+
+            section#client {
+                padding: 60px 25px;
+            }
+
+            #client h3 {
+                font-size: 0.95rem;
+                letter-spacing: 4px;
+                margin-bottom: 60px;
+            }
+
+            .client {
+                margin-bottom: 60px;
+            }
+
+            .client img {
+                margin-bottom: 30px;
+            }
+
+            .client .nombre {
+                margin-top: 30px;
+            }
+
+            #galeriaFotos .col-6:nth-child(1) img {
+                content: url("images/mobile/image-gallery-milkbottles.jpg");
+            }
+            #galeriaFotos .col-6:nth-child(2) img {
+                content: url("images/mobile/image-gallery-orange.jpg");
+            }
+            #galeriaFotos .col-6:nth-child(3) img {
+                content: url("images/mobile/image-gallery-cone.jpg");
+            }
+            #galeriaFotos .col-6:nth-child(4) img {
+                content: url("images/mobile/image-gallery-sugar-cubes.jpg");
+            }
+
+            #enlaceFooter a {
+                margin: 0 15px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <header id="header">
-    <img src="images/logo.svg" alt="">
-    <nav id="navegador">
-      <a href="">About</a>
-      <a href="">Services</a>
-      <a href="">Projects</a>
-      <a href="" id="botonEspecial">Contact</a>
-    </nav>
-  </header>
-  <section id="arriba">
-    <h1>we are creatives</h1>
-    <article>
-    <img src="images/icon-arrow-down.svg" alt="">
-    </article>
-  </section>
-  <section id="transform" class="g-0">
-    <div id="textoTransform">
-    <h2>Transform you brand</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum debitis praesentium, at repellat impedit ipsa labore adipisci iure dolore blanditiis natus dolor nobis earum, qui eum exercitationem consectetur quas architecto!</p>
-    <a href="" class="enlacesSubrayados">LEARN MORE</a>
-    </div>
-    <div id="fotoHuevo" class="g-0">
-      <img src="images/desktop/image-transform.jpg" alt="">
-    </div>
-  </section>
-  <section id="Stand">
-    <div id="fotoStand">
-      <img src="images/desktop/image-stand-out.jpg" alt="">
-    </div>
-    <div id="textoStand">
-      <h2>Stand out to the right audience</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, ratione? Obcaecati voluptates dolore in deserunt, atque corrupti cupiditate harum numquam exercitationem ratione! Explicabo nisi eum ea adipisci odio. Blanditiis, reprehenderit.</p>
-      <a href="" class="enlacesSubrayados">LEARN MORE</a>
-    </div>
-  </section>
-  <section id="graphicPhotography">
-    <div id="graphic">
-      <h3>Graphic Desing</h3>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A provident nobis voluptatem, cumque dolore, libero tenetur dolorum magni temporibus ratione est beatae alias iste, maxime quam explicabo modi facere eveniet.</p>
-    </div>
-    <div id="photography">
-      <h3>Photography</h3>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente facere amet iusto quisquam nulla aperiam quia molestiae voluptates, velit consequatur doloremque optio magni pariatur natus aliquid veritatis hic dolores laudantium.</p>
-    </div>
-  </section>
-  <section id="client">
-    <div class="client">
-      <img src="images/image-emily.jpg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem perspiciatis minima est! Quisquam expedita voluptatem laudantium sapiente quidem inventore magni.</p>
-      <p class="nombre">Emily R.</p>
-      <p class="estudios">Marketing Director</p>
-    </div>
-    <div class="client">
-      <img src="images/image-thomas.jpg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem perspiciatis minima est! Quisquam expedita voluptatem laudantium sapiente quidem inventore magni.</p>
-      <p class="nombre">Thomas S.</p>
-      <p class="estudios">Chief Operating Officer</p>
-    </div>
-    <div class="client">
-      <img src="images/image-jennie.jpg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem perspiciatis minima est! Quisquam expedita voluptatem laudantium sapiente quidem inventore magni.</p>
-      <p class="nombre">Jennie F.</p>
-      <p class="estudios">Business Owner</p>
-    </div>
-  </section>
-  <section id="galeriaFotos">
-    <div>
-      <img src="images/desktop/image-gallery-milkbottles.jpg" alt="">
-    </div>
-    <div>
-      <img src="images/desktop/image-gallery-orange.jpg" alt="">
-    </div>
-    <div>
-      <img src="images/desktop/image-gallery-cone.jpg" alt="">
-    </div>
-    <div>
-      <img src="images/desktop/image-gallery-sugarcubes.jpg" alt="">
-    </div>
-  </section>
-  <footer id="footer">
-    <h4>sunnyside</h4>
-    <nav id="enlaceFooter">
-      <a href="">About</a>
-      <a href="">Services</a>
-      <a href="">Projects</a>
-    </nav>
-    <div id="imgagenes">
-      <img src="images/icon-facebook.svg" alt="">
-      <img src="images/icon-instagram.svg" alt="">
-      <img src="images/icon-twitter.svg" alt="">
-      <img src="images/icon-pinterest.svg" alt="">
-    </div>
-  </footer>
 
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- CABECERA -->
+    <header id="header">
+        <nav class="navbar navbar-expand-md p-0">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand m-0" href="#">
+                    <img src="images/logo.svg" alt="Sunnyside">
+                </a>
+                
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler border-0 shadow-none p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navegador">
+                    <img src="images/icon-hamburger.svg" alt="Abrir menú">
+                </button>
 
+                <!-- Menú colapsable -->
+                <div class="collapse navbar-collapse justify-content-end" id="navegador">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="#transform">About</a>
+                        <a class="nav-link" href="#graphicPhotography">Services</a>
+                        <a class="nav-link" href="#galeriaFotos">Projects</a>
+                        <a class="nav-link" href="#footer" id="botonEspecial">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <!-- About
-  Services
-  Projects
-  Contact
+    <!-- PORTADA -->
+    <section id="arriba">
+        <h1>We are creatives</h1>
+        <article>
+            <img src="images/icon-arrow-down.svg" alt="Flecha hacia abajo">
+        </article>
+    </section>
 
-  We are creatives
+    <!-- TRANSFORM YOUR BRAND -->
+    <section id="transform" class="container-fluid p-0">
+        <div class="row g-0">
+            <div id="fotoHuevo" class="col-12 md:col-6 order-1 md:order-2">
+                <img src="images/desktop/image-transform.jpg" alt="Huevo sobre fondo amarillo">
+            </div>
+            <div id="textoTransform" class="col-12 md:col-6 order-2 md:order-1">
+                <h2>Transform your brand</h2>
+                <p>
+                    We are a full-service creative agency specializing in helping brands grow fast.
+                    Engage your clients through compelling visuals that do most of the marketing for you.
+                </p>
+                <a href="#" class="enlacesSubrayados">Learn more</a>
+            </div>
+        </div>
+    </section>
 
-  Transform your brand
+    <!-- STAND OUT -->
+    <section id="stand" class="container-fluid p-0">
+        <div class="row g-0">
+            <div id="fotoStand" class="col-12 md:col-6">
+                <img src="images/desktop/image-stand-out.jpg" alt="Vaso sobre fondo rosa">
+            </div>
+            <div id="textoStand" class="col-12 md:col-6">
+                <h2>Stand out to the right audience</h2>
+                <p>
+                    Using a collaborative formula of designers, researchers, photographers,
+                    videographers, and copywriters, we'll build and extend your brand in digital places.
+                </p>
+                <a href="#" class="enlacesSubrayados">Learn more</a>
+            </div>
+        </div>
+    </section>
 
-  We are a full-service creative agency specializing in helping brands grow fast. 
-  Engage your clients through compelling visuals that do most of the marketing for you.
+    <!-- GRAPHIC DESIGN Y PHOTOGRAPHY -->
+    <section id="graphicPhotography" class="container-fluid p-0">
+        <div class="row g-0">
+            <div id="graphic" class="col-12 md:col-6">
+                <h3>Graphic Design</h3>
+                <p>
+                    Great design makes you memorable. We deliver artwork that underscores your brand message
+                    and captures potential clients' attention.
+                </p>
+            </div>
+            <div id="photography" class="col-12 md:col-6">
+                <h3>Photography</h3>
+                <p>
+                    Increase your credibility by getting the most stunning, high-quality photos
+                    that improve your business image.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  Learn more
+    <!-- TESTIMONIOS -->
+    <section id="client" class="container-fluid">
+        <h3>Client testimonials</h3>
+        <div class="row">
+            <div class="client col-12 md:col-4 mb-4 md:mb-0">
+                <img src="images/image-emily.jpg" alt="Emily">
+                <p>
+                    We put our trust in Sunnyside and they delivered, making sure our needs were met
+                    and deadlines were always hit.
+                </p>
+                <p class="nombre">Emily R.</p>
+                <p class="estudios">Marketing Director</p>
+            </div>
+            <div class="client col-12 md:col-4 mb-4 md:mb-0">
+                <img src="images/image-thomas.jpg" alt="Thomas">
+                <p>
+                    Sunnyside's enthusiasm coupled with their keen interest in our brand's success
+                    made it a satisfying and enjoyable experience.
+                </p>
+                <p class="nombre">Thomas S.</p>
+                <p class="estudios">Chief Operating Officer</p>
+            </div>
+            <div class="client col-12 md:col-4">
+                <img src="images/image-jennie.jpg" alt="Jennie">
+                <p>
+                    Incredible end result! Our sales increased over 400% when we worked with Sunnyside.
+                    Highly recommended!
+                </p>
+                <p class="nombre">Jennie F.</p>
+                <p class="estudios">Business Owner</p>
+            </div>
+        </div>
+    </section>
 
-  Stand out to the right audience
+    <!-- GALERÍA -->
+    <section id="galeriaFotos" class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-6 md:col-3">
+                <img src="images/desktop/image-gallery-milkbottles.jpg" alt="Botellas de leche">
+            </div>
+            <div class="col-6 md:col-3">
+                <img src="images/desktop/image-gallery-orange.jpg" alt="Naranja">
+            </div>
+            <div class="col-6 md:col-3">
+                <img src="images/desktop/image-gallery-cone.jpg" alt="Cono de helado">
+            </div>
+            <div class="col-6 md:col-3">
+                <img src="images/desktop/image-gallery-sugar-cubes.jpg" alt="Cubos de azúcar">
+            </div>
+        </div>
+    </section>
 
-  Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places. 
+    <!-- FOOTER -->
+    <footer id="footer">
+        <h4>sunnyside</h4>
+        <nav id="enlaceFooter">
+            <a href="#transform">About</a>
+            <a href="#graphicPhotography">Services</a>
+            <a href="#galeriaFotos">Projects</a>
+        </nav>
+        <div id="imagenesSociales">
+            <img src="images/icon-facebook.svg" alt="Facebook">
+            <img src="images/icon-instagram.svg" alt="Instagram">
+            <img src="images/icon-twitter.svg" alt="Twitter">
+            <img src="images/icon-pinterest.svg" alt="Pinterest">
+        </div>
+    </footer>
 
-  Learn more
-
-  Graphic design
-  Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.
-
-  Photography
-  Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
-
-  Client testimonials
-
-  We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.
-  Emily R.
-  Marketing Director
-
-  Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.
-  Thomas S.
-  Chief Operating Officer
-
-  Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
-  Jennie F.
-  Business Owner
-
-  About
-  Services
-  Projects
-  Contact -->
-
+    <!-- BOOTSTRAP 6 JS -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
