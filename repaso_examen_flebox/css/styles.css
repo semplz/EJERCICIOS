@@ -1,0 +1,102 @@
+*{
+    font-family:Verdana;
+    font-size: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header#header{
+    display: flex;
+    box-shadow: 0 10px 10px rgb(0,0,0,.1);
+    padding-bottom: 40px;
+    position: sticky;
+    background-color: antiquewhite;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+}
+
+body{
+    background-color: bisque;
+}
+
+h1#logo{
+    margin-left: auto;
+}
+
+nav#navegador{
+    margin-left: auto;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
+
+button#boton{
+    order: 2;
+    display: none;
+    background-color: transparent;
+    border-color: transparent;
+    &:focus ~ nav#navegador{
+            display: flex;
+            gap: 10px;
+        }
+    }
+
+@media screen and (width < 960px) {
+    nav#navegador{
+        display: none;
+    }
+    button#boton{
+        display: flex;
+        margin-left: auto;
+    }
+}
+
+div#jesus{
+    margin-top: 20px;
+    margin: 30px;
+    text-align: center;
+    h2{
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+    p{
+        max-width: auto;
+    }
+}
+@media screen and (max-width: 767px) {
+        div#jesus{
+            margin: 20px;
+        }
+        div#jesus > img{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+        div#jesus > p, div#jesus > h2{
+            font-size: 10px;
+        }
+}
+
+hr{
+    border-color: black;
+}
+
+section#medio {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas */
+    flex-wrap: wrap;         /* Permite que bajen si no caben en la pantalla */
+    gap: 25px;               /* Espacio uniforme entre tarjetas */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (width > 767px){
+    section#medio{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+header#header{
+    display: flex;
+    box-shadow: 0 10px 10px rgb(0,0,0,.1);
+    padding-bottom: 40px;
+    #logo{
+        margin-left: auto;
+    }
+    .navegacion{
+        margin-left: auto;
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    }
+    #boton{
+        display: none;
+        margin-left: auto;
+        order: 2;
+        font-size: 15px;
+        background-color: transparent;
+        border-color: transparent;
+    }
+    @media screen and (width < 960px) {
+        .navegacion{
+            display: none;
+        }
+        #boton{
+            display: flex;
+            margin-left: auto;
+        }
+    }
+
+    a{
+        margin-left: 10px;
+    }
+}
