@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarjeta 3D</title>
+        <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <style>
+            body {
+            min-height: 100vh;
+            text-align: center;
+            perspective: 1000px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease;
+
+            &:hover {
+                transform: rotateY(180deg);
+            }
+        }
+
+        .card div {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border: solid 10px white;
+            position: absolute;
+            inset: 0;
+            align-content: center;
+            text-align: center;
+            font-size: 8rem;
+            backface-visibility: hidden; 
+            box-sizing: border-box;
+        }
+
+        div#bloqueB {
+            background-image: url(reda2.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: yellow;
+        }
+
+        div#bloqueA {
+            background-image: url(reda1.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: yellow;
+            transform: rotateY(180deg); 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="tarjeta animate__animated animate__fadeInDownBig">
+            <div id="bloqueB">B</div>
+            <div id="bloqueA">A</div>
+        </div>
+    </div>
+
+</body>
+</html>
