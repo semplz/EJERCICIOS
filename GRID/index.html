@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1{
+            background-color: crimson;
+        }
+        .c2{
+            background-color: turquoise;
+        }
+        .c3{
+            background-color: bisque;
+        }
+        body{
+            max-width: 80%;
+            border: solid 1px red;
+            min-height: 100vh;
+            margin: auto;
+        }
+
+        .contenedor{
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            /* grid-template-columns: repeat(2,minmax(200px,1fr)); */
+            grid-template-columns: repeat(3,1fr);
+            gap: 5px;
+            > div{
+                color: white;
+                width: 100px;
+                height: 100px;
+                border: solid 1px palegreen;
+                text-align: center;
+                align-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="caja1 c1">1</div>
+        <div class="caja2 c2">2</div>
+        <div class="caja3 c3">3</div>
+        <div class="caja4 c1">4</div>
+        <div class="caja5 c2">5</div>
+        <div class="caja6 c3">6</div>
+    </div>
+</body>
+</html>
