@@ -1,0 +1,60 @@
+header#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    p#logo{
+        font-weight: bold;
+        font-size: 25px;
+    }
+    nav#navegador a{
+        text-decoration: none;
+        color: rgb(50, 50, 50);
+        margin-left: 15px;
+    }
+}
+section#todosProductos{
+    div#titulo{
+        display: flex;
+        align-items: center;
+        h1{
+            font-size: 50px;
+        }
+    }
+    div#filtros{
+        display: flex;
+        justify-content: space-between;
+        div{
+            display: flex;
+            p{
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+.color{
+    color: rgb(122, 122, 122);
+}
+.palabraLinea{
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #333;
+    text-decoration: none;
+    color: black;
+}
+
+section#productos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    div#producto7{
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
