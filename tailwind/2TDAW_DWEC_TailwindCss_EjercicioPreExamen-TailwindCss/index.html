@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="../src/output.css">
 </head>
 
-<body class="dark:bg-blue-400">
-    <header class="bg-white">
-        <div class="flex items-center justify-around gap-4 bg-slate-100 p-4">
+<body class="bg-white dark:bg-slate-950 dark:text-white">
+    <header class="bg-white dark:bg-slate-950">
+        <div class="flex items-center justify-around gap-4 bg-white dark:bg-slate-950 p-4">
             <div>
-                <img src="assets-png/logo-modo-claro.png" alt="" class="w-45 h-10">
+                <img src="assets-png/logo-modo-claro.png" alt="" class="w-45 h-10 dark:hidden">
+                <img src="assets-png/logo-modo-oscuro.png" alt="" class="w-45 h-10 hidden dark:block">
             </div>
             <nav id="navegador">
                 <a class="ml-5 text-xl">Inicio</a>
@@ -21,87 +22,197 @@
                 <a class="rounded-4xl bg-purple-400 p-5 ms-8 text-white font-bold">Prueba gratis</a>
             </nav>
             <button id="theme-toggle" aria-label="Cambiar tema"
-                class="border border-gray-200 rounded-full p-2 cursor-pointer">
-                <img src="assets-png/icono-luna.png" alt="Activar modo oscuro" class="size-10 ">
-                <img src="assets-png/icono-sol.png" alt="Activar modo claro" class="size-10 hidden"> </button>
+                class="border border-gray-200 dark:border-slate-800 rounded-full p-2 cursor-pointer">
+                <img src="assets-png/icono-luna.png" alt="Activar modo oscuro" class="size-10">
+                <img src="assets-png/icono-sol.png" alt="Activar modo claro" class="size-10 hidden">
+            </button>
         </div>
     </header>
+
     <section>
         <div class="flex p-20 justify-between gap-20">
             <div class="text-start">
                 <h1 class="font-bold text-6xl">Tu equipo, por fin en la misma página</h1>
-                <p class="pt-5">Nimbo reúne tareas, fechas y responsables en tableros claros. Menos reuniones, más
+                <p class="pt-5 dark:text-gray-400">Nimbo reúne tareas, fechas y responsables en tableros claros. Menos reuniones, más
                     trabajo hecho.</p>
                 <nav class="pt-10">
                     <a href="" class="rounded-2xl bg-purple-400 p-3 ms-3 text-white font-bold">Empieza gratis</a>
-                    <a href="" class="rounded-2xl border border-gray-400 p-3 ms-3 font-bold">Ver funciones</a>
+                    <a href="" class="rounded-2xl border border-gray-400 dark:border-slate-700 p-3 ms-3 font-bold">Ver funciones</a>
                 </nav>
-                <p class="pt-5 font-light">Sin tarjeta de crédito. Cancela cuando quieras</p>
+                <p class="pt-5 font-light dark:text-gray-400">Sin tarjeta de crédito. Cancela cuando quieras</p>
             </div>
             <div>
-                <img src="assets-png/hero-modo-claro.png" alt="" class="rounded-2xl">
-            </div>
-        </div>
-    </section>
-    <section>
-        <h1 class="font-bold text-4xl">Todo lo que tu equipo necesita</h1>
-        <p class="pt-5 font-light">Seis herramientas pensadas para que nadie pregunte «¿quién se encarga de esto?»</p>
-        <div class="grid grid-cols-3 gap-10 pt-10">
-            <div class="rounded-2xl border border-gray-300 ms-5 font-bold items-start p-5">
-                <img src="assets-png/icono-tableros.png" alt="" class="w-15 p-2 bg-purple-100 rounded-xl">
-                <h3 class=" text-2xl">Tableros</h3>
-                <p class="font-light text-xl">Arrastra tareas entre «Por hacer», «En curso» y «Hecho»</p>
-            </div>
-            <div class="rounded-2xl border border-gray-300 ms-5 font-bold items-start p-5">
-                <img src="assets-png/icono-tareas.png" alt="" class="size-10">
-                <h3 class="font-bold">Fechas límite</h3>
-                <p class="font-light">Cada tarea tiene su fecha y se ordena sola en el calendario</p>
-            </div>
-            <div class="rounded-2xl border border-gray-300 ms-5 font-bold items-start p-5">
-                <img src="assets-png/icono-equipos.png" alt="" class="size-10">
-                <h3 class="font-bold">Equipos</h3>
-                <p class="font-light">Asigna responsables y comparte tableros con quien quieras</p>
-            </div>
-            <div class="rounded-2xl border border-gray-300 ms-5 font-bold items-start p-5">
-                <img src="assets-png/icono-avisos.png" alt="" class="size-10">
-                <h3 class="font-bold">Avisos</h3>
-                <p class="font-light">Recibe un aviso solo cuando algo te toca a ti</p>
-            </div>
-            <div class="rounded-2xl border border-gray-300 ms-5 font-bold items-start p-5">
-                <img src="assets-png/icono-automatizar.png" alt="" class="size-10">
-                <h3 class="font-bold">Automatizaciones</h3>
-                <p class="font-light">Mueve tareas y avisa al equipo sin hacer nada a mano</p>
-            </div>
-            <div class="rounded-2xl border border-gray-300 ms-5 font-bold items-start p-5">
-                <img src="assets-png/icono-informes.png" alt="" class="size-10">
-                <h3 class="font-bold">Informes</h3>
-                <p class="font-light">Mira cuanto se ha hecho esta semana y que se retrasa</p>
-            </div>
-        </div>
-    </section>
-    <section>
-        <h1>Un plan para cada equipo</h1>
-        <p>Empieza gratis y cambia de plan cuando lo neesites.</p>
-        <div>
-            <div>
-                <h4>Gratis</h4>
-                <p>0 €</p>
-                <p>Para probar Nimbo</p>
+                <img src="assets-png/hero-modo-claro.png" alt="" class="rounded-2xl dark:hidden">
+                <img src="assets-png/hero-modo-oscuro.png" alt="" class="rounded-2xl hidden dark:block">
             </div>
         </div>
     </section>
 
+    <section>
+        <h1 class="font-bold text-4xl">Todo lo que tu equipo necesita</h1>
+        <p class="pt-5 font-light dark:text-gray-400">Seis herramientas pensadas para que nadie pregunte «¿quién se encarga de esto?»</p>
+        <div class="grid grid-cols-3 gap-10 pt-10">
+            <div class="rounded-2xl border border-gray-300 dark:border-slate-800 dark:bg-slate-900 ms-5 font-bold items-start p-5">
+                <img src="assets-png/icono-tableros.png" alt="" class="w-15 p-2 bg-purple-100 dark:bg-purple-950 rounded-xl">
+                <h3 class="text-2xl">Tableros</h3>
+                <p class="font-light text-xl dark:text-gray-400">Arrastra tareas entre «Por hacer», «En curso» y «Hecho»</p>
+            </div>
+            <div class="rounded-2xl border border-gray-300 dark:border-slate-800 dark:bg-slate-900 ms-5 font-bold items-start p-5">
+                <img src="assets-png/icono-tareas.png" alt="" class="w-15 p-2 bg-purple-100 dark:bg-purple-950 rounded-xl">
+                <h3 class="text-2xl">Fechas límite</h3>
+                <p class="font-light text-xl dark:text-gray-400">Cada tarea tiene su fecha y se ordena sola en el calendario</p>
+            </div>
+            <div class="rounded-2xl border border-gray-300 dark:border-slate-800 dark:bg-slate-900 ms-5 font-bold items-start p-5">
+                <img src="assets-png/icono-equipos.png" alt="" class="w-15 p-2 bg-purple-100 dark:bg-purple-950 rounded-xl">
+                <h3 class="text-2xl">Equipos</h3>
+                <p class="font-light text-xl dark:text-gray-400">Asigna responsables y comparte tableros con quien quieras</p>
+            </div>
+            <div class="rounded-2xl border border-gray-300 dark:border-slate-800 dark:bg-slate-900 ms-5 font-bold items-start p-5">
+                <img src="assets-png/icono-avisos.png" alt="" class="w-15 p-2 bg-purple-100 dark:bg-purple-950 rounded-xl">
+                <h3 class="text-2xl">Avisos</h3>
+                <p class="font-light text-xl dark:text-gray-400">Recibe un aviso solo cuando algo te toca a ti</p>
+            </div>
+            <div class="rounded-2xl border border-gray-300 dark:border-slate-800 dark:bg-slate-900 ms-5 font-bold items-start p-5">
+                <img src="assets-png/icono-automatizar.png" alt="" class="w-15 p-2 bg-purple-100 dark:bg-purple-950 rounded-xl">
+                <h3 class="text-2xl">Automatizaciones</h3>
+                <p class="font-light text-xl dark:text-gray-400">Mueve tareas y avisa al equipo sin hacer nada a mano</p>
+            </div>
+            <div class="rounded-2xl border border-gray-300 dark:border-slate-800 dark:bg-slate-900 ms-5 font-bold items-start p-5">
+                <img src="assets-png/icono-informes.png" alt="" class="w-15 p-2 bg-purple-100 dark:bg-purple-950 rounded-xl">
+                <h3 class="text-2xl">Informes</h3>
+                <p class="font-light text-xl dark:text-gray-400">Mira cuanto se ha hecho esta semana y que se retrasa</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-50 dark:bg-slate-950 py-14">
+        <div class="text-center">
+            <h1 class="font-bold text-3xl">Un plan para cada equipo</h1>
+            <p class="font-light pt-1 text-gray-500 dark:text-gray-400">Empieza gratis y cambia de plan cuando lo necesites.</p>
+        </div>
+
+        <div class="flex items-center justify-center gap-10 pt-14">
+            <div class="bg-white dark:bg-slate-900 dark:border dark:border-slate-800 rounded-xl p-8 w-80 shadow-sm">
+                <h4 class="font-bold text-xl">Gratis</h4>
+                <p class="font-bold text-5xl pt-4">0 €</p>
+                <p class="text-gray-500 dark:text-gray-400 pt-1">Para probar Nimbo</p>
+                <ul class="font-light pt-6 space-y-2 dark:text-gray-300">
+                    <li>✓ 3 tableros</li>
+                    <li>✓ Hasta 5 personas</li>
+                    <li>✓ Avisos por correo</li>
+                </ul>
+                <div class="pt-8">
+                    <a href="#"
+                        class="block w-full font-bold text-purple-600 dark:text-purple-400 border-2 border-purple-600 dark:border-purple-400 py-2 text-center rounded-xl">Elegir
+                        Gratis</a>
+                </div>
+            </div>
+
+            <div class="bg-purple-600 rounded-xl p-8 py-12 w-80 shadow-lg">
+                <span class="inline-block bg-yellow-400 text-black font-bold text-xs px-3 py-1 rounded-2xl">El más
+                    elegido</span>
+                <h4 class="font-bold text-xl text-white pt-4">Equipo</h4>
+                <div class="flex items-baseline gap-1 pt-4">
+                    <p class="font-bold text-5xl text-white">8 €</p>
+                    <p class="font-light text-white text-sm">/persona al mes</p>
+                </div>
+                <p class="text-white font-light pt-1">Para equipos que crecen</p>
+                <ul class="text-white font-light pt-6 space-y-2">
+                    <li>✓ Tableros ilimitados</li>
+                    <li>✓ Automatizaciones</li>
+                    <li>✓ Informes semanales</li>
+                </ul>
+                <div class="pt-8">
+                    <a href="#"
+                        class="block w-full bg-white font-bold text-purple-600 py-2.5 text-center rounded-xl">Elegir
+                        Equipo</a>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-slate-900 dark:border dark:border-slate-800 rounded-xl p-8 w-80 shadow-sm">
+                <h4 class="font-bold text-xl">Empresa</h4>
+                <div class="flex items-baseline gap-1 pt-4">
+                    <p class="font-bold text-5xl">20 €</p>
+                    <p class="font-light text-gray-500 dark:text-gray-400 text-sm">/persona al mes</p>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400 pt-1">Para organizaciones grandes</p>
+                <ul class="font-light pt-6 space-y-2 dark:text-gray-300">
+                    <li>✓ Todo lo de Equipo</li>
+                    <li>✓ Permisos avanzados</li>
+                    <li>✓ Soporte prioritario</li>
+                </ul>
+                <div class="pt-8">
+                    <a href="#"
+                        class="block w-full font-bold text-purple-600 dark:text-purple-400 border-2 border-purple-600 dark:border-purple-400 py-2 text-center rounded-xl">Elegir
+                        Empresa</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white dark:bg-slate-950 py-16 px-4">
+        <div class="bg-slate-900 dark:bg-purple-600 rounded-2xl max-w-4xl mx-auto py-14 px-8 text-center">
+            <h2 class="text-white font-bold text-3xl">Organiza tu primer tablero hoy</h2>
+            <p class="text-gray-400 dark:text-purple-100 pt-2">Déjanos tu correo y te enviamos el acceso en un minuto.</p>
+
+            <form class="flex justify-center gap-3 pt-8">
+                <input type="email" placeholder="tu@empresa.com"
+                    class="bg-slate-800 dark:bg-purple-500 border border-slate-700 dark:border-purple-400 text-white placeholder-gray-400 dark:placeholder-purple-200 rounded-xl px-4 py-3 w-72">
+                <button type="submit" class="bg-yellow-400 text-black font-bold rounded-xl px-6 py-3">Quiero acceso</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-white dark:bg-slate-950 border-t border-gray-200 dark:border-slate-800 pt-12 pb-8 px-4">
+        <div class="max-w-5xl mx-auto flex justify-between pb-12">
+            <div>
+                <div class="flex items-center gap-2">
+                    <span
+                        class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">✓</span>
+                    <span class="font-bold text-xl">Nimbo</span>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm pt-2">Tareas en equipo, sin ruido.</p>
+            </div>
+
+            <div>
+                <h5 class="font-bold text-sm pb-3">Producto</h5>
+                <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <li><a href="#">Funciones</a></li>
+                    <li><a href="#">Precios</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="font-bold text-sm pb-3">Empresa</h5>
+                <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="font-bold text-sm pb-3">Legal</h5>
+                <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-100 dark:border-slate-800 pt-8 text-center">
+            <p class="text-gray-400 text-xs">© 2026 Nimbo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script>
         const luna = document.querySelector("button img:first-child");
         const sol = document.querySelector("button img:last-child");
-        const boton = document.querySelector("button")
+        const boton = document.querySelector("button");
         boton.addEventListener("click", () => {
             document.documentElement.classList.toggle("dark");
             sol.classList.toggle("hidden");
             luna.classList.toggle("hidden");
         });
-    </script>
     </script>
 </body>
 
